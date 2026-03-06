@@ -1,0 +1,4 @@
+flex-cluster1:
+  gateway: 172.150.33.233
+  username: admin
+  password: P@ssword123

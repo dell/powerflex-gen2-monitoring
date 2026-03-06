@@ -1,0 +1,238 @@
+THIRD-PARTY SOFTWARE LICENSES
+==============================
+
+This file documents the third-party software components included in or
+used by the PowerFlex Monitoring VM, along with their respective licenses.
+
+Last updated: 2026-02-26
+
+================================================================================
+Component:  AlmaLinux 9
+Version:    9.x
+License:    GPL v2
+URL:        https://almalinux.org
+Source:     Available from https://repo.almalinux.org/vault/
+
+AlmaLinux is a community-driven, free enterprise Linux distribution. It is
+distributed under the GNU General Public License, version 2. Complete
+corresponding source code for all AlmaLinux packages is available from the
+AlmaLinux Vault repository at the URL above.
+
+================================================================================
+Component:  InfluxDB OSS
+Version:    1.12.2
+License:    MIT
+URL:        https://influxdata.com
+Source:     https://github.com/influxdata/influxdb/tree/master-1.x
+
+Copyright (c) 2013-2018 InfluxData Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+Component:  Telegraf
+Version:    1.37.2
+License:    MIT
+URL:        https://github.com/influxdata/telegraf
+
+Copyright (c) 2015-2024 InfluxData Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+Component:  Grafana OSS
+Version:    9.5.21
+License:    GNU Affero General Public License v3 (AGPLv3)
+URL:        https://grafana.com
+Source:     https://github.com/grafana/grafana/tree/v9.5.21
+
+Grafana is distributed unmodified. Only configuration files (grafana.ini) and
+dashboard JSON files have been added or modified. These are data/configuration
+and are not derivative works of the Grafana source code.
+
+The complete source code for Grafana 9.5.21 is available at the GitHub URL
+above. The full AGPLv3 license text is available at:
+https://www.gnu.org/licenses/agpl-3.0.html
+
+================================================================================
+Component:  Python 3
+Version:    3.9.25
+License:    Python Software Foundation License (PSF)
+URL:        https://www.python.org
+Source:     Available from AlmaLinux Vault (python3-3.9.25-3.el9_7.src.rpm)
+
+================================================================================
+Component:  python3-requests
+Version:    2.25.1
+License:    Apache License 2.0
+URL:        https://pypi.io/project/requests
+Source:     https://github.com/psf/requests
+
+Copyright 2019 Kenneth Reitz
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not
+use this file except in compliance with the License. You may obtain a copy of
+the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+================================================================================
+Component:  python3-urllib3
+Version:    1.26.5
+License:    MIT
+URL:        https://github.com/urllib3/urllib3
+
+Copyright (c) 2008-2020 Andrey Petrov and contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+Component:  python3-chardet
+Version:    4.0.0
+License:    LGPLv2
+URL:        https://github.com/chardet/chardet
+
+This library is free software; you can redistribute it and/or modify it under
+the terms of the GNU Lesser General Public License as published by the Free
+Software Foundation; either version 2 of the License, or (at your option) any
+later version.
+
+The full LGPLv2 license text is available at:
+https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
+
+Note: chardet is used as a transitive dependency of python3-requests. LGPLv2
+permits use as a library without imposing copyleft obligations on the
+calling application.
+
+================================================================================
+Component:  python3-idna
+Version:    2.10
+License:    BSD License / Python Software Foundation License / Unicode License
+URL:        https://github.com/kjd/idna
+
+Copyright (c) 2013-2021, Kim Davies. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors
+   may be used to endorse or promote products derived from this software
+   without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+================================================================================
+Component:  python3-pyyaml (PyYAML)
+Version:    5.4.1
+License:    MIT
+URL:        https://github.com/yaml/pyyaml
+
+Copyright (c) 2017-2021 Ingy dot Net
+Copyright (c) 2006-2016 Kirill Simonov
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+
+LICENSE COMPATIBILITY SUMMARY
+=============================
+
+All third-party components used in this project are compatible with the
+Apache License 2.0 used for the custom Python scripts:
+
+  - MIT              : Fully compatible with Apache 2.0
+  - Apache 2.0       : Same license
+  - BSD              : Fully compatible with Apache 2.0
+  - PSF              : Fully compatible with Apache 2.0
+  - LGPLv2 (chardet) : Compatible when used as a library (not modified)
+  - AGPLv3 (Grafana) : Grafana is shipped unmodified; dashboards and
+                        configuration are not derivative works
+  - GPL v2 (AlmaLinux): Standard OS distribution; no copyleft impact on
+                        application-level code
+
+No licensing conflicts have been identified.

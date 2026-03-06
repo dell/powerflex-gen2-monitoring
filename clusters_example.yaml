@@ -1,0 +1,22 @@
+# Information requied for each cluster: the Gateway (IP or Hostname), Username, and Password
+# If using 4.0 or higher provide the primary ingress IP. That is the IP of the PowerFlex Manager UI. 
+# Note: a 'monitor'-type user has sufficient permissions for this tool
+
+# Copy this file and create a clusters.yaml file, in the same directory, with the information from your own PowerFlex cluster(s).
+# See /etc/telegraf/telegraf.d/powerflex-telegraf-influxdb.conf for instructions on monitoring multiple clusters.
+
+flex-cluster1:
+  gateway: flex-clu1-gw01
+  username: flex-username
+  password: flex-password
+
+flex-cluster2:
+  gateway: flex-clu2-gw01
+  username: flex-username
+  password: flex-password
+
+flex-cluster3:
+  gateway: flex-clu3-gw01
+  username: flex-username
+  password: flex-password
+
