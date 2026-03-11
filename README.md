@@ -8,6 +8,11 @@ This project provides a complete monitoring stack for PowerFlex Gen2 (erasure-co
 
 A pre-packaged all-in-one virtual machine is provided and is the easiest way to use the tools. However, if you wish to run these tools on your own EL9 distribution, this document will guide you through the process. While it is possible to run these tools on other distributions, it will require some additional configuration and testing on your part.
 
+## Open Source License Notices
+This product may contain open source code licensed to you in accordance with the applicable open source license. Dell Technologies provides a copy of any source code in accordance with the applicable open source license. Dell Technologies may charge shipping and handling charges for such distribution. You can direct all requests for open source software source code in writing to Dell Legal, 176 South St., Hopkinton, MA 01748, ATTN: Open Source Program Office.
+
+This project is licensed under the Apache License, Version 2.0. See the LICENSE file for details.
+
 ## System Requirements
 
 ### Operating System
