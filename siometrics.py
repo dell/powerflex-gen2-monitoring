@@ -1,4 +1,4 @@
-# Copyright 2026 Dell, Inc.
+# Copyright 2026 Dell Inc.
 # 
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -161,8 +161,8 @@ def fmt_ProtectionDomain(domain, instances, relations):
 
 tags = {
     'System'           : 'cluster={clu_name},cluster_id={clu_id}',
-    'StorageNode'      : 'cluster={clu_name},cluster_id={clu_id},storage_node={sn_name},storage_node_id={sn_id},protection_domain_id={pdo_id},protection_domain_name={pdo_name}',
-    'Device'           : 'cluster={clu_name},cluster_id={clu_id},storage_node={sn_name},storage_node_id={sn_id},device_name={dev_name},device_id={dev_id},device_path={dev_path},protection_domain_id={pdo_id},protection_domain_name={pdo_name}',
+    'StorageNode'      : 'cluster={clu_name},cluster_id={clu_id},storage_node_name={sn_name},storage_node_id={sn_id},protection_domain_id={pdo_id},protection_domain_name={pdo_name}',
+    'Device'           : 'cluster={clu_name},cluster_id={clu_id},storage_node_name={sn_name},storage_node_id={sn_id},device_name={dev_name},device_id={dev_id},device_path={dev_path},protection_domain_id={pdo_id},protection_domain_name={pdo_name}',
     'Volume'           : 'cluster={clu_name},cluster_id={clu_id},volume_name={vol_name},volume_id={vol_id},volume_type={vol_type},storage_pool_id={sto_id},storage_pool_name={sto_name},protection_domain_id={pdo_id},protection_domain_name={pdo_name}',
     'StoragePool'      : 'cluster={clu_name},cluster_id={clu_id},storage_pool_id={sto_id},storage_pool_name={sto_name},protection_domain_id={pdo_id},protection_domain_name={pdo_name}',
     'Sdc'              : 'cluster={clu_name},cluster_id={clu_id},sdc_name={sdc_name},sdc_id={sdc_id}',

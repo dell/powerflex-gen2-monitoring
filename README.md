@@ -121,7 +121,8 @@ Copy the provided Telegraf configuration:
 cp /var/local/telegraf-powerflex/example-telegraf-powerflex-config/powerflex-telegraf-influxdb.conf /etc/telegraf/telegraf.d/
 ```
 
-For monitoring multiple clusters, update the commands section in `/etc/telegraf/telegraf.d/powerflex-telegraf-influxdb.conf`:
+For monitoring multiple clusters, add a second (or third) entry in the `clusters.yaml` file.
+Then update the commands section in `/etc/telegraf/telegraf.d/powerflex-telegraf-influxdb.conf`:
 
 ```toml
 [[inputs.exec]]
@@ -229,8 +230,8 @@ Pre-built dashboards are available in the `example-grafana-dashboards/` director
 - **PowerFlex - 1. Clusters (Stacked)**: Multi-cluster comparison view
 - **PowerFlex - 2. Devices**: Storage device metrics
 - **PowerFlex - 3. Pools**: Storage pool performance and capacity
-- **PowerFlex - 4. SDC**: Storage Data Client metrics
-- **PowerFlex - 5. SDS**: Storage Data Server metrics  
+- **PowerFlex - 4. SDC_Hosts**: Storage Data Client metrics
+- **PowerFlex - 5. Storage Node**: Storage Data Server metrics  
 - **PowerFlex - 6. Volumes**: Volume performance and usage
 - **PowerFlex - 7. Cluster Capacity**: Cluster-wide capacity planning
 
@@ -248,24 +249,23 @@ Pre-built dashboards are available in the `example-grafana-dashboards/` director
 /var/local/telegraf-powerflex/
 ├── README.md                           # This file
 ├── LICENSE                             # Apache 2.0 License
-├── OS_PACKAGE_SBOM.txt                 # Software Bill of Materials
 ├── THIRD_PARTY_LICENSES                # Third-party license information
 ├── clusters.yaml                       # Your cluster configuration (you must create this; example provided in clusters_example.yaml)
 ├── clusters_example.yaml               # Example cluster configuration
-├── siocli.py                          # PowerFlex metrics collection script
-├── siometrics.py                      # Metrics formatting utilities
-├── sio_sdk/                           # PowerFlex SDK module
-│   ├── __init__.py                    # SDK initialization and collection functions
-│   └── SioSdk.py                      # REST API client and authentication
-├── tests/                             # Unit tests
-│   ├── test_sio_sdk.py               # SDK tests
-│   ├── test_siocli.py                # CLI tests
-│   └── test_siometrics_tags.py       # Metrics tagging tests
-├── example-telegraf-powerflex-config/ # Telegraf configuration examples
+├── siocli.py                           # PowerFlex metrics collection script
+├── siometrics.py                       # Metrics formatting utilities
+├── sio_sdk/                            # PowerFlex SDK module
+│   ├── __init__.py                     # SDK initialization and collection functions
+│   └── SioSdk.py                       # REST API client and authentication
+├── tests/                              # Unit tests
+│   ├── test_sio_sdk.py                 # SDK tests
+│   ├── test_siocli.py                  # CLI tests
+│   └── test_siometrics_tags.py         # Metrics tagging tests
+├── example-telegraf-powerflex-config/  # Telegraf configuration examples
 │   └── powerflex-telegraf-influxdb.conf
-├── example-influxdbv1-config/         # InfluxDB configuration examples
+├── example-influxdbv1-config/          # InfluxDB configuration examples
 │   └── influxdb.conf
-├── example-grafana-config/            # Grafana configuration examples
+├── example-grafana-config/             # Grafana configuration examples
 │   ├── grafana.ini
 │   ├── powerflex.crt
 │   └── powerflex.key
@@ -274,8 +274,8 @@ Pre-built dashboards are available in the `example-grafana-dashboards/` director
     ├── PowerFlex - 1. Clusters (Stacked).json
     ├── PowerFlex - 2. Devices.json
     ├── PowerFlex - 3. Pools.json
-    ├── PowerFlex - 4. SDC.json
-    ├── PowerFlex - 5. SDS.json
+    ├── PowerFlex - 4. SDC_Hosts.json
+    ├── PowerFlex - 5. Storage Node.json
     ├── PowerFlex - 6. Volumes.json
     └── PowerFlex - 7. Cluster Capacity.json
 ```
