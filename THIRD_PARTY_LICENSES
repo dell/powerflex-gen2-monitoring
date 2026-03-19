@@ -4,7 +4,7 @@ THIRD-PARTY SOFTWARE LICENSES
 This file documents the third-party software components included in or
 used by the PowerFlex Monitoring VM, along with their respective licenses.
 
-Last updated: 2026-02-26
+Last updated: 2026-03-19
 
 ================================================================================
 Component:  AlmaLinux 9
@@ -91,7 +91,7 @@ Component:  Python 3
 Version:    3.9.25
 License:    Python Software Foundation License (PSF)
 URL:        https://www.python.org
-Source:     Available from AlmaLinux Vault (python3-3.9.25-3.el9_7.src.rpm)
+Source:     Available from AlmaLinux Vault (python3-3.9.25-3.el9_7.1.src.rpm)
 
 ================================================================================
 Component:  python3-requests
@@ -234,4 +234,3 @@ Apache License 2.0 used for the custom Python scripts:
                         configuration are not derivative works
   - GPL v2 (AlmaLinux): Standard OS distribution; no copyleft impact on
                         application-level code
-
