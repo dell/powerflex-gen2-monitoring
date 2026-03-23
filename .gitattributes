@@ -1,0 +1,4 @@
+# Normalize all text files to LF line endings in the repo.
+# On checkout, line endings stay LF (Linux-native).
+# On commit from Windows, CRLF is converted to LF.
+* text=auto eol=lf
