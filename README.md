@@ -4,9 +4,31 @@ A comprehensive monitoring solution for Dell PowerFlex storage systems, using Te
 
 ## Overview
 
-This project provides a complete monitoring stack for PowerFlex Gen2 (erasure-coding-based) storage clusters, version 5.x and higher. It is not compatible with Gen1 (mirroring-based) PowerFlex systems. It collectss metrics via custom Python scripts using Telegraf, Sformats and stores these in InfluxDB, and visualizes them through pre-built Grafana dashboards.
+This project provides a complete monitoring stack for PowerFlex Gen2 (erasure-coding-based) storage clusters, version 5.x and higher. It is not compatible with Gen1 (mirroring-based) PowerFlex systems. It collects metrics via custom Python scripts using Telegraf, formats and stores these in InfluxDB, and visualizes them through pre-built Grafana dashboards.
 
 A pre-packaged all-in-one virtual machine is provided and is the easiest way to use the tools. However, if you wish to run these tools on your own EL9 distribution, this document will guide you through the process. While it is possible to run these tools on other distributions, it will require some additional configuration and testing on your part.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    subgraph PF["PowerFlex Cluster(s)"]
+        GW["Gateway / Manager<br/>REST API"]
+    end
+    subgraph VM["Monitoring VM (EL9)"]
+        direction TB
+        T["Telegraf<br/>(exec input)"]
+        PY["siocli.py + sio_sdk<br/>(Python)"]
+        IDB["InfluxDB<br/>(time-series store)"]
+        G["Grafana<br/>(HTTPS :443)"]
+        T -- "runs every 10s" --> PY
+        PY -- "stdout<br/>InfluxDB line protocol" --> T
+        T -- "writes metrics" --> IDB
+        G -- "queries" --> IDB
+    end
+    GW -- "REST/HTTPS" --> PY
+    U["User Browser"] -- "HTTPS" --> G
+```
 
 ## Open Source License Notices
 This product may contain open source code licensed to you in accordance with the applicable open source license. Dell Technologies provides a copy of any source code in accordance with the applicable open source license. Dell Technologies may charge shipping and handling charges for such distribution. You can direct all requests for open source software source code in writing to Dell Legal, 176 South St., Hopkinton, MA 01748, ATTN: Open Source Program Office.
@@ -155,8 +177,8 @@ This configuration enables a number of security measures not provided by the def
 cp /var/local/telegraf-powerflex/example-grafana-config/grafana.ini /etc/grafana/
 
 # Copy SSL certificates (or provide your own)
-cp /var/local/telegraf-powerflex/example-grafana-config/powerflex.crt /etc/grafana/
-cp /var/local/telegraf-powerflex/example-grafana-config/powerflex.key /etc/grafana/
+cp /var/local/telegraf-powerflex/example-grafana-config/powerflex-DEMO-ONLY.crt /etc/grafana/powerflex.crt
+cp /var/local/telegraf-powerflex/example-grafana-config/powerflex-DEMO-ONLY.key /etc/grafana/powerflex.key
 
 # Set proper permissions
 chmod 600 /etc/grafana/powerflex.key
@@ -267,8 +289,8 @@ Pre-built dashboards are available in the `example-grafana-dashboards/` director
 │   └── influxdb.conf
 ├── example-grafana-config/             # Grafana configuration examples
 │   ├── grafana.ini
-│   ├── powerflex.crt
-│   └── powerflex.key
+│   ├── powerflex-DEMO-ONLY.crt
+│   └── powerflex-DEMO-ONLY.key
 └── example-grafana-dashboards/        # Pre-built Grafana dashboards
     ├── PowerFlex - 0. Cluster (Overview).json
     ├── PowerFlex - 1. Clusters (Stacked).json
@@ -323,9 +345,14 @@ systemctl status influxdb telegraf grafana-server
 
 ## Security Considerations
 
-- Use only dedicated PowerFlex monitoring-type user accounts with minimal required permissions
-- Consider rotating the credentials periodically for production deployments
-- Enable firewall rules to restrict access to Grafana and InfluxDB
+For full details, see [SECURITY.md](SECURITY.md).
+
+- **SSL/TLS Certificates:** The included `powerflex-DEMO-ONLY.crt` and `powerflex-DEMO-ONLY.key` are self-signed demo certificates intended for initial setup only. Replace them with your own certificates for production use. If you are using the pre-built monitoring VM, the setup script (`prep_powerflex_monitoring.sh`) will generate unique certificates when the monitoring environment is first initialized.
+- **Cluster Credentials:** Use only dedicated PowerFlex monitoring-type user accounts with minimal required permissions. Protect `clusters.yaml` with restrictive file permissions (`chmod 600`).
+- **Grafana Admin Password:** Change the default Grafana admin password on first login.
+- **Credential Rotation:** Consider rotating credentials periodically for production deployments.
+- **Firewall:** Enable firewall rules to restrict access to Grafana and InfluxDB.
+- **Grafana Secret Key (Optional):** If you add additional authenticated data sources to Grafana, consider enabling `secret_key` in `grafana.ini` to encrypt stored credentials. Generate a unique random value (e.g., `openssl rand -hex 20`).
 
 ## License
 
